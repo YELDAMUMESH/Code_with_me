@@ -7,9 +7,34 @@ int *middle_term(int arr[],int n)
 
 int main()
 {
-    int a[]={4,7,8,9,4,2,6},len=sizeof(a)/sizeof(a[0]);
-    int *mid=middle_term(a,len);
-    printf("%d\n",*mid);
+    int a[100],n,len=sizeof(a)/sizeof(a[0]);
+    printf("Enter no.of array elements: ");
+    scanf("%d",&n);
+    printf("Enter the array elements: ");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+
+    }
+
+    printf("Array elements are: ");
+
+    for(int j=0;j<n;j++)
+    {
+        printf("%d ",a[j]);
+
+    }
+
+    printf("\nTotal size of array  = %d\n",len);
+
+    if (n%2==0)
+    {
+        printf("Enter odd no.of elements\n");
+    }
+    else{
+    int *mid=middle_term(a,n);
+    printf("Middle term is : %d\n",*mid);
+    }
 
 return 0;
 }
