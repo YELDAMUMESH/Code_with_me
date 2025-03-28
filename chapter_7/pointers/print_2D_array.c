@@ -1,44 +1,36 @@
-#include<stdio.h>
-
-void general(int array[100][100],int rows,int columns)
-{
-    int i,j;
-    printf("Array elements are: \n");
-    for(i=0;i<rows;i++)
-    {
-        for(j=0;j<columns;j++)
-        {
-            printf("%d ",array[i][j]);
-        }
-        printf("\n");
-    }
-
-}
-
+#include <stdio.h>
 
 int main()
 {
-    int rows,columns;
-    printf("Enter the number of rows and columns:\n");
-    scanf("%d%d",&rows,&columns);
+    int array[10][10], *p, r, c;
 
-    if (rows <= 0 || columns <= 0) {
-        printf("Invalid dimensions for the array.\n");
-        return 1;
-    }
-    int array[rows][columns]; 
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &r, &c);
 
-    printf("Enter the array elements: ");
-    for(int i=0;i<rows;i++)
-    {
-        for(int j=0;j<columns;j++)
-        {
-            scanf("%d",&array[i][j]);
-        }
+    // Validate input dimensions
+    if (r > 10 || c > 10 || r <= 0 || c <= 0) {
+        printf("Invalid matrix size! Maximum allowed is 10x10.\n");
+        return 1; // Exit program if input is invalid
     }
 
-    general(array, rows, columns);
+    printf("Enter array elements:\n");
+    
+    // Using pointer arithmetic for input
+    for (p = &array[0][0]; p < &array[0][0] + (r * c); p++) {
+        scanf("%d", p);
+    }
 
+    printf("\nElements entered are:\n");
 
-return 0;
+    // Using pointer arithmetic for output in matrix format
+    int count = 0;
+    for (p = &array[0][0]; p < &array[0][0] + (r * c); p++) {
+        printf("%d ", *p);
+        count++;
+        if (count % c == 0) // New line after each row
+            printf("\n");
+    }
+
+    return 0;
 }
+
