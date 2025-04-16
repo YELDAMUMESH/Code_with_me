@@ -30,7 +30,7 @@ int main()
         {
             printf("%d ", p[i * c + j]);  // Access the element in row i and column j
         }
-        printf("\n");  // New line after each row
+        printf("\n");
     }
     printf("\n");
     free(p);
