@@ -20,7 +20,7 @@ void binary_xor(unsigned int num1, unsigned int num2) {
     unsigned int XOR = num1 ^ num2;
 
     printf("===============================================\n");
-    printf("Bitwise OR of %u ^ %u = %u\n", num1, num2, XOR);
+    printf("Bitwise XOR of %u ^ %u = %u\n", num1, num2, XOR);
     print_binary(XOR);
 
     return;
