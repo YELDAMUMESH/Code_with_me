@@ -4,10 +4,13 @@ int main()
 
     int arr[]={1,2,3,4,5};
     int *p;
-    for(p=arr;p<arr+sizeof(arr)/sizeof(arr[0]);p++)
+    printf("array address: %p\n",arr);
+    for(int i=0;i<sizeof(arr)/sizeof(arr[0]);i++)
     {
-        printf("Element %ld: %d \n",p-arr,*p);
-        printf("Adress of Element %ld: %zu \n",p-arr,p);
+        printf("array [%d]: %p\n",i,arr+i);
     }
+    printf("Complete array address: %p\n",arr);
+    printf("complete array address + 1: %p\n",&arr+1);
+
 return 0;
 }
