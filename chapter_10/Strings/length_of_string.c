@@ -6,7 +6,7 @@ int main()
     fgets(str, sizeof(str), stdin);
     char *ptr = str;
     int count=0;
-    while(*ptr != '\0')
+    while(*ptr != '\0') //check for null terminator
     {
         count++;
         ptr++;
